@@ -11,22 +11,27 @@ namespace TestMaximum
         static void Main(string[] args)
         {
             //Welcome Message
-            Console.WriteLine("=-=-=-=-=-Welcome to the Find Maximum Problem using Generics-=-=-=-=-=");
+            Console.WriteLine("Welcome to Maximum Number");
 
-            //Calling Class to call a Function
-            MaximumNumberCheck maximumNumberCheck = new MaximumNumberCheck();
+            int[] intArray = { 34, 23, 12, 36 };
+            double[] doubleArray = { 12.5, 45.65, 987.45, 658.78 };
+            string[] stringArray = { "Apple", "Peach", "Banana" };
 
-            //Maximum Number At First Place
-            string outputString1 = maximumNumberCheck.MaximumStringNumber("Peach", "Apple", "Banana");
-            Console.WriteLine("Maximum Number of String at First Place : " + outputString1);
+            // Passing integer input with max number at first place
+            ExtendGenericmaximum<int> extendGenericMaximum = new ExtendGenericmaximum<int>(intArray);
+            int outputInt = extendGenericMaximum.MaxMethod();
 
-            //Maximum Number At Second Place
-            string outputString2 = maximumNumberCheck.MaximumStringNumber("Apple", "Peach", "Banana");
-            Console.WriteLine("Maximum Number of String at Seond Place : " + outputString2);
+            ExtendGenericmaximum<double> extendGenericMaximum1 = new ExtendGenericmaximum<double>(doubleArray);
+            double outputDouble = extendGenericMaximum1.MaxMethod();
 
-            //Maximum Number At Third Place
-            string outputString3 = maximumNumberCheck.MaximumStringNumber("Apple", "Banana", "Peach");
-            Console.WriteLine("Maximum Number of String at Third Place : " + outputString3);
+            ExtendGenericmaximum<string> extendGenericMaximum2 = new ExtendGenericmaximum<string>(stringArray);
+            string outputString = extendGenericMaximum2.MaxMethod();
+
+
+            //Display Output
+            Console.WriteLine("Integer Max : " + outputInt);
+            Console.WriteLine("Float Max : " + outputDouble);
+            Console.WriteLine("String Max : " + outputString);
 
             Console.ReadLine();
         }
