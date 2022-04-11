@@ -11,27 +11,47 @@ namespace TestMaximum
         static void Main(string[] args)
         {
             //Welcome Message
-            Console.WriteLine("Welcome to Maximum Number");
+            Console.WriteLine("=-=-=-=-=-Welcome to the Find Maximum Problem using Generics-=-=-=-=-=");
 
-            int[] intArray = { 34, 23, 12, 36 };
-            double[] doubleArray = { 12.5, 45.65, 987.45, 658.78 };
-            string[] stringArray = { "Apple", "Peach", "Banana" };
+            //Calling Class to call a Function
+            MaximumNumberCheck maximumNumberCheck = new MaximumNumberCheck();
 
-            // Passing integer input with max number at first place
-            ExtendGenericmaximum<int> extendGenericMaximum = new ExtendGenericmaximum<int>(intArray);
-            int outputInt = extendGenericMaximum.MaxMethod();
+            //Maximum Number At First, Second and Third Place 
+            int outputInt1 = maximumNumberCheck.MaximumNumber<int>(434, 57, 12);
+            int outputInt2 = maximumNumberCheck.MaximumNumber<int>(344, 734, 712);
+            int outputInt3 = maximumNumberCheck.MaximumNumber<int>(343, 344, 1200);
 
-            ExtendGenericmaximum<double> extendGenericMaximum1 = new ExtendGenericmaximum<double>(doubleArray);
-            double outputDouble = extendGenericMaximum1.MaxMethod();
+            //Maximum Number At First, Second and Third Place 
+            double outputFloat1 = maximumNumberCheck.MaximumNumber<double>(128.9, 8.9, 11.75);
+            double outputFloat2 = maximumNumberCheck.MaximumNumber<double>(12.9, 48.9, 28.29);
+            double outputFloat3 = maximumNumberCheck.MaximumNumber<double>(1.9, 4.0, 4.9);
 
-            ExtendGenericmaximum<string> extendGenericMaximum2 = new ExtendGenericmaximum<string>(stringArray);
-            string outputString = extendGenericMaximum2.MaxMethod();
+            //Maximum Number At First, Second and Third Place 
+            string outputString1 = maximumNumberCheck.MaximumNumber<string>("Peach", "Apple", "Banana");
+            string outputString2 = maximumNumberCheck.MaximumNumber<string>("Apple", "Peach", "Banana");
+            string outputString3 = maximumNumberCheck.MaximumNumber<string>("Apple", "Banana", "Peach");
 
+            //Display Results
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Results Of an Integer : ");
+            Console.WriteLine("Integer at First Place : " + outputInt1);
+            Console.WriteLine("Integer at Second Place : " + outputInt2);
+            Console.WriteLine("Integer at Third Place : " + outputInt3);
+            Console.WriteLine("----------------------------------------");
 
-            //Display Output
-            Console.WriteLine("Integer Max : " + outputInt);
-            Console.WriteLine("Float Max : " + outputDouble);
-            Console.WriteLine("String Max : " + outputString);
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Results Of an Float : ");
+            Console.WriteLine("Float at First Place : " + outputFloat1);
+            Console.WriteLine("Float at Second Place : " + outputFloat2);
+            Console.WriteLine("Float at Third Place : " + outputFloat3);
+            Console.WriteLine("----------------------------------------");
+
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("Results Of an String : ");
+            Console.WriteLine("String at First Place : " + outputString1);
+            Console.WriteLine("String at Second Place : " + outputString2);
+            Console.WriteLine("String at Third Place : " + outputString3);
+            Console.WriteLine("----------------------------------------");
 
             Console.ReadLine();
         }
